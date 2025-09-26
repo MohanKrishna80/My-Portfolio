@@ -1,12 +1,41 @@
-# React + Vite
+# Mohan Krishna Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **personal portfolio website** of Mohan Krishna, showcasing projects, skills, and contact information. The website is designed to be responsive, clean, and visually appealing for potential employers or clients.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Home Page**
+  - Introduction with name and role.
+  - Attractive hero section with background image and welcome message.
+  - Mobile-responsive design.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Projects Section**
+  - Displays all projects with descriptions, images, and links to live demos or GitHub repositories.
+  - Organized with categories or filters (if applicable).
+
+- **Skills Section**
+  - Highlights technical skills such as HTML, CSS, JavaScript, React, Tailwind CSS, Redux, etc.
+  - Progress bars or badges for better visualization.
+
+- **Contact Section**
+  - Contact form to reach out via email.
+  - Social media links for professional networking.
+
+- **Responsive Design**
+  - Fully optimized for mobile, tablet, and desktop devices.
+
+---
+
+## Technologies Used
+
+- **React** - Frontend framework
+- **Tailwind CSS** - Styling and layout
+- **React Router Dom** - Page navigation
+- **JavaScript / JSX** - Interactive components
+
+---
+
+## Project Structure
+
