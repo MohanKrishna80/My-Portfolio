@@ -12,7 +12,7 @@ import {
 export const skills = [
   {
     name: "React",
-    level: "90%",
+    level: "75%",
     icon: <SiReact className="w-6 h-6 text-[#61DAFB]" />
   },
   {
@@ -22,7 +22,7 @@ export const skills = [
   },
   {
     name: "Tailwind CSS",
-    level: "88%",
+    level: "80%",
     icon: <SiTailwindcss className="w-6 h-6 text-[#38BDF8]" />
   },
   {
@@ -32,7 +32,7 @@ export const skills = [
   },
   {
     name: "CSS3",
-    level: "90%",
+    level: "80%",
     icon: <SiCss3 className="w-6 h-6 text-[#1572B6]" />
   },
   {
