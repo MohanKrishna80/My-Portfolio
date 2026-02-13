@@ -1,0 +1,352 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+html, body {
+  overflow-x: hidden;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* ===== Horizontal Hero Animation ===== */
+
+.hero-left,
+.hero-right {
+  opacity: 0;
+  transition:
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+/* Start positions */
+.hero-left {
+  transform: translateX(-80px);
+}
+
+.hero-right {
+  transform: translateX(80px);
+}
+
+/* Active state */
+.hero-animate.show .hero-left,
+.hero-animate.show .hero-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Optional small delay for image */
+.hero-animate.show .hero-right {
+  transition-delay: 0.15s;
+}
+/* Glow Animation */
+.glow-wrapper {
+  position: relative;
+  border-radius: 50%;
+}
+
+.glow-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    #a855f7,
+    #6366f1,
+    #a855f7,
+    #6366f1
+  );
+  background-size: 300% 300%;
+  animation: glowing 4s linear infinite;
+  z-index: 0;
+  filter: blur(20px);
+  opacity: 0.8;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* ===== LEFT → RIGHT ROLLER ANIMATION ===== */
+
+.nav-roller {
+  transform-origin: left;      /* start rolling from left edge */
+  transform: scaleX(0);        /* collapsed */
+  opacity: 0;
+  transition:
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.4s ease;
+  will-change: transform;
+}
+
+/* When visible → unroll */
+.nav-roller.show {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+/* Prevent content from stretching weird during scale */
+.nav-inner {
+  opacity: 0;
+  transition: opacity 0.4s ease 0.35s;
+}
+
+/* Show content slightly after roll starts */
+.nav-roller.show .nav-inner {
+  opacity: 1;
+}
+
+
+/* ===== Skill Progress Bar ===== */
+
+.skill-progress {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.08);
+  overflow: hidden;
+  margin-top: 14px;
+}
+
+.dark .skill-progress {
+  background: rgba(255,255,255,0.1);
+}
+
+.skill-progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #a855f7, #6366f1);
+  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Fill animation when visible */
+.skills-animate.show .skill-progress-fill {
+  width: var(--level);
+}
+
+/* ===== Skills Card Animation ===== */
+
+.skill-box {
+  opacity: 0;
+  transform: translateY(60px) scale(0.95);
+  transition:
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+/* When section is visible */
+.skills-animate.show .skill-box {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Stagger reveal */
+.skills-animate.show .skill-box:nth-child(1) { transition-delay: 0.05s; }
+.skills-animate.show .skill-box:nth-child(2) { transition-delay: 0.15s; }
+.skills-animate.show .skill-box:nth-child(3) { transition-delay: 0.25s; }
+.skills-animate.show .skill-box:nth-child(4) { transition-delay: 0.35s; }
+.skills-animate.show .skill-box:nth-child(5) { transition-delay: 0.45s; }
+.skills-animate.show .skill-box:nth-child(6) { transition-delay: 0.55s; }
+
+/* Hover interaction */
+.skill-box:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+
+
+
+
+/* ===== Projects Left–Right Animation ===== */
+
+.project-card {
+  opacity: 0;
+  transition:
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+/* Starting positions with slight scale */
+.project-left {
+  transform: translateX(-120px) scale(0.95);
+}
+
+.project-right {
+  transform: translateX(120px) scale(0.95);
+}
+
+/* When section becomes visible */
+.projects-animate.show .project-card {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+/* Stagger timing */
+.projects-animate.show .project-card:nth-child(1) { transition-delay: 0.1s; }
+.projects-animate.show .project-card:nth-child(2) { transition-delay: 0.25s; }
+.projects-animate.show .project-card:nth-child(3) { transition-delay: 0.4s; }
+.projects-animate.show .project-card:nth-child(4) { transition-delay: 0.55s; }
+.projects-animate.show .project-card:nth-child(5) { transition-delay: 0.7s; }
+.projects-animate.show .project-card:nth-child(6) { transition-delay: 0.85s; }
+
+
+
+.contact-section {
+  text-align: center;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+
+/* Wrapper */
+.icons-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+/* Base icon state */
+.icon {
+  opacity: 0;
+  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Different starting positions */
+.icon.left {
+  transform: translateX(-120vw);
+}
+
+.icon.right {
+  transform: translateX(120vw);
+}
+
+.icon.top {
+  transform: translateY(-120vh);
+}
+
+.icon.bottom {
+  transform: translateY(120vh);
+}
+
+/* When section becomes visible */
+.contact-section.show .icon {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Stagger effect */
+.contact-section.show .icon.left {
+  transition-delay: 0.1s;
+}
+
+.contact-section.show .icon.bottom {
+  transition-delay: 0.3s;
+}
+
+.contact-section.show .icon.top {
+  transition-delay: 0.5s;
+}
+
+.contact-section.show .icon.right {
+  transition-delay: 0.7s;
+}
+
+/* Floating animation */
+@keyframes floatY {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.contact-section.show .icon a {
+  animation: floatY 3s ease-in-out infinite;
+}
+
+/* Hover */
+.icon a {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.icon a:hover {
+  transform: scale(1.2);
+}
+
+.footer-section {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.footer-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.footer-section .footer-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.footer-section.show .footer-item:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.footer-section.show .footer-item:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+.footer-section.show .footer-item:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+
+/* Bottom line fade */
+.footer-bottom {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.footer-section.show .footer-bottom {
+  opacity: 1;
+  transition-delay: 0.8s;
+}
+
+
