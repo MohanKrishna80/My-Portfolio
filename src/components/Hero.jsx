@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import profileImg from "../assets/mohan2.jpg";
+import resume from "../assets/mohan_resume (5).pdf";
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -29,12 +30,11 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
-  /* ===== Load + Scroll Re-trigger Animation ===== */
+  /* ===== Animation ===== */
   useEffect(() => {
     const section = heroRef.current;
     if (!section) return;
 
-    // Run animation on initial load
     requestAnimationFrame(() => {
       section.classList.add("show");
     });
@@ -45,7 +45,6 @@ const Hero = () => {
           if (entry.isIntersecting) {
             section.classList.add("show");
           } else {
-            // remove so animation replays when revisiting
             section.classList.remove("show");
           }
         });
@@ -65,7 +64,7 @@ const Hero = () => {
     >
       <div className="grid md:grid-cols-2 gap-12 items-center">
 
-        {/* LEFT CONTENT (slides from left) */}
+        {/* LEFT CONTENT */}
         <div className="hero-left text-center md:text-left">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
             Building{" "}
@@ -84,19 +83,38 @@ const Hero = () => {
             I build scalable, modern and beautiful web applications using
             React and Tailwind CSS with strong focus on performance and UI design.
           </p>
+
+          {/* ✅ BUTTONS ADDED HERE */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            
+            <a
+              href={resume}
+              download
+              className="bg-purple-600 text-white px-8 py-3 rounded-xl font-semibold shadow-lg hover:bg-purple-700 hover:scale-105 transition-all duration-300"
+            >
+              Download Resume
+            </a>
+
+            <a
+              href="#contact"
+              className="border border-purple-600 text-purple-600 px-8 py-3 rounded-xl font-semibold shadow-lg hover:bg-purple-50 hover:scale-105 transition-all duration-300"
+            >
+              Contact Me
+            </a>
+
+          </div>
         </div>
 
-    {/* RIGHT IMAGE */}
-<div className="hero-right flex justify-center">
-  <div className="relative glow-wrapper">
-    <img
-      src={profileImg}
-      alt="Mohan Krishna"
-      className="w-72 h-72 md:w-96 md:h-96 object-cover rounded-full relative z-10"
-    />
-  </div>
-</div>
-
+        {/* RIGHT IMAGE */}
+        <div className="hero-right flex justify-center">
+          <div className="relative glow-wrapper">
+            <img
+              src={profileImg}
+              alt="Mohan Krishna"
+              className="w-72 h-72 md:w-96 md:h-96 object-cover rounded-full relative z-10"
+            />
+          </div>
+        </div>
 
       </div>
     </section>
