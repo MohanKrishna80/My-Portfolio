@@ -47,6 +47,12 @@ export const skills = [
 
 export const projects = [
   {
+    title: "Employee Management System",
+    desc: "An Employee management system with all CRUD operations",
+    live: "https://employee-management-system-seven-ashen.vercel.app/",
+    github: "#",
+  },
+  {
     title: "ShowFlix",
     desc: "Modern movie streaming UI with API integration.",
     live: "https://show-flix-black.vercel.app/",
@@ -59,27 +65,16 @@ export const projects = [
     github: "#",
   },
   {
-    title: "Business Dashboard",
-    desc: "Admin analytics dashboard with protected routes.",
-    live: "https://my-business-app-sandy.vercel.app/",
+    title: "Book Finder",
+    desc: "Search books.Read and Relax",
+    live: "https://book-finder-zeta-henna.vercel.app/",
     github: "#",
   },
   {
-    title: "Business Dashboard",
-    desc: "Admin analytics dashboard with protected routes.",
-    live: "https://my-business-app-sandy.vercel.app/",
+    title: "Coding Ninja's Site",
+    desc: "Coding Ninja's home page clone",
+    live: "https://coding-nina-s-clone-iav2.vercel.app/",
     github: "#",
   },
-  {
-    title: "Business Dashboard",
-    desc: "Admin analytics dashboard with protected routes.",
-    live: "https://my-business-app-sandy.vercel.app/",
-    github: "#",
-  },
-  {
-    title: "Business Dashboard",
-    desc: "Admin analytics dashboard with protected routes.",
-    live: "https://my-business-app-sandy.vercel.app/",
-    github: "#",
-  },
+ 
 ];
