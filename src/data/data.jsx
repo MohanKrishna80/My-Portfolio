@@ -17,7 +17,7 @@ export const skills = [
   },
   {
     name: "JavaScript",
-    level: "85%",
+    level: "80%",
     icon: <SiJavascript className="w-6 h-6 text-[#F7DF1E]" />
   },
   {
