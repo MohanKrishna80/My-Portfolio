@@ -47,8 +47,20 @@ export const skills = [
 
 export const projects = [
   {
+    title: "Food Delivery Platform",
+    desc: "Full-stack MERN food delivery app with Stripe payments, admin dashboard, and order tracking system.",
+    live: "https://food-delivery-app-frontend-3a54.onrender.com",
+    github: "https://github.com/MohanKrishna80/Food-Delivery-App",
+  },
+  {
+    title: "AI Resume Builder",
+    desc: "SaaS-style resume builder with templates, PDF export, and AI-powered content suggestions.",
+    live: "https://resume-builder-frontend-nye5.onrender.com",
+    github: "https://github.com/MohanKrishna80/Resume-Builder",
+  },
+  {
     title: "Employee Management System",
-    desc: "An Employee management system with all CRUD operations",
+    desc: "Employee management system with full CRUD operations.",
     live: "https://employee-management-system-seven-ashen.vercel.app/",
     github: "#",
   },
@@ -60,21 +72,8 @@ export const projects = [
   },
   {
     title: "Smart Bazaar",
-    desc: "E-commerce frontend with cart & filters.",
+    desc: "E-commerce frontend with cart and filtering functionality.",
     live: "https://smart-bazaar-inky.vercel.app/",
     github: "#",
   },
-  {
-    title: "Book Finder",
-    desc: "Search books.Read and Relax",
-    live: "https://book-finder-zeta-henna.vercel.app/",
-    github: "#",
-  },
-  {
-    title: "Coding Ninja's Site",
-    desc: "Coding Ninja's home page clone",
-    live: "https://coding-nina-s-clone-iav2.vercel.app/",
-    github: "#",
-  },
- 
 ];
