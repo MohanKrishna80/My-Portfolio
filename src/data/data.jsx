@@ -4,10 +4,11 @@ import {
   SiJavascript,
   SiNodedotjs,
   SiTailwindcss,
+  SiTypescript,
   SiExpress,
   SiMongodb,
-  SiHtml5,
-  SiCss3,
+ 
+  
   SiGit
 } from "react-icons/si";
 
