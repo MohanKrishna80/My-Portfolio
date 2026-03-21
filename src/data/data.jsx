@@ -2,7 +2,10 @@
 import {
   SiReact,
   SiJavascript,
+  SiNodedotjs,
   SiTailwindcss,
+  SiExpress,
+  SiMongodb,
   SiHtml5,
   SiCss3,
   SiGit
