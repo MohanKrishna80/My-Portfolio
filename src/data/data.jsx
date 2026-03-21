@@ -12,13 +12,33 @@ import {
 export const skills = [
   {
     name: "React",
-    level: "75%",
+    level: "80%",
     icon: <SiReact className="w-6 h-6 text-[#61DAFB]" />
   },
   {
+    name: "Node.js",
+    level: "75%",
+    icon: <SiNodedotjs className="w-6 h-6 text-[#339933]" />
+  },
+  {
+    name: "Express.js",
+    level: "75%",
+    icon: <SiExpress className="w-6 h-6 text-white" />
+  },
+  {
+    name: "MongoDB",
+    level: "75%",
+    icon: <SiMongodb className="w-6 h-6 text-[#47A248]" />
+  },
+  {
     name: "JavaScript",
-    level: "80%",
+    level: "85%",
     icon: <SiJavascript className="w-6 h-6 text-[#F7DF1E]" />
+  },
+  {
+    name: "TypeScript",
+    level: "75%",
+    icon: <SiTypescript className="w-6 h-6 text-[#3178C6]" />
   },
   {
     name: "Tailwind CSS",
@@ -26,14 +46,9 @@ export const skills = [
     icon: <SiTailwindcss className="w-6 h-6 text-[#38BDF8]" />
   },
   {
-    name: "HTML5",
-    level: "92%",
-    icon: <SiHtml5 className="w-6 h-6 text-[#E34F26]" />
-  },
-  {
-    name: "CSS3",
-    level: "80%",
-    icon: <SiCss3 className="w-6 h-6 text-[#1572B6]" />
+    name: "Redux",
+    level: "75%",
+    icon: <SiRedux className="w-6 h-6 text-[#764ABC]" />
   },
   {
     name: "Git",
@@ -41,7 +56,6 @@ export const skills = [
     icon: <SiGit className="w-6 h-6 text-[#F05032]" />
   }
 ];
-
 
 
 
