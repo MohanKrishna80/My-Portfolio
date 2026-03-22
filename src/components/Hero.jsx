@@ -4,33 +4,47 @@ import resume from "../assets/mohan_resume (9).pdf";
 
 const Hero = () => {
   const heroRef = useRef(null);
-  const [text, setText] = useState("");
-  const fullText = "Frontend Developer";
 
-  /* ===== Typing Animation ===== */
+  const roles = [
+    "MERN Stack Developer",
+    "React Developer",
+    "Full Stack Engineer",
+  ];
+
+  const [text, setText] = useState("");
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  /* ===== Typing Animation (Improved Loop) ===== */
   useEffect(() => {
     let index = 0;
     let isDeleting = false;
 
+    const currentRole = roles[roleIndex];
+
     const type = () => {
       if (!isDeleting) {
-        setText(fullText.slice(0, index + 1));
+        setText(currentRole.slice(0, index + 1));
         index++;
-        if (index === fullText.length) {
+
+        if (index === currentRole.length) {
           setTimeout(() => (isDeleting = true), 1200);
         }
       } else {
-        setText(fullText.slice(0, index - 1));
+        setText(currentRole.slice(0, index - 1));
         index--;
-        if (index === 0) isDeleting = false;
+
+        if (index === 0) {
+          isDeleting = false;
+          setRoleIndex((prev) => (prev + 1) % roles.length);
+        }
       }
     };
 
     const interval = setInterval(type, 100);
     return () => clearInterval(interval);
-  }, []);
+  }, [roleIndex]);
 
-  /* ===== Animation ===== */
+  /* ===== Scroll Animation ===== */
   useEffect(() => {
     const section = heroRef.current;
     if (!section) return;
@@ -63,15 +77,15 @@ const Hero = () => {
       className="hero-animate py-24 px-6 max-w-7xl mx-auto"
     >
       <div className="grid md:grid-cols-2 gap-12 items-center">
-
+        
         {/* LEFT CONTENT */}
         <div className="hero-left text-center md:text-left">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
             Building{" "}
             <span className="text-purple-600 dark:text-purple-400">
-              High-Performance
+              Scalable & High-Performance
             </span>
-            <br /> Frontend Applications
+            <br /> MERN Stack Applications
           </h1>
 
           <h2 className="text-2xl md:text-3xl font-semibold mb-6">
@@ -80,13 +94,14 @@ const Hero = () => {
           </h2>
 
           <p className="text-gray-700 dark:text-gray-300 mb-8">
-            I build scalable, modern and beautiful web applications using
-            React and Tailwind CSS with strong focus on performance and UI design.
+            MERN stack developer specializing in building scalable web
+            applications with secure APIs, optimized performance, and modern UI
+            using React and Tailwind CSS. Passionate about creating real-world,
+            production-ready solutions.
           </p>
 
-          {/* ✅ BUTTONS ADDED HERE */}
+          {/* BUTTONS */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            
             <a
               href={resume}
               download
@@ -101,7 +116,6 @@ const Hero = () => {
             >
               Contact Me
             </a>
-
           </div>
         </div>
 
@@ -115,7 +129,6 @@ const Hero = () => {
             />
           </div>
         </div>
-
       </div>
     </section>
   );
