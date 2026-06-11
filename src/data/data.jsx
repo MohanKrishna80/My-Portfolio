@@ -65,14 +65,19 @@ export const skills = [
 
 
 export const projects = [
- 
+  {
+    title: "Social Media Scheduler",
+    desc: "AI-powered social media management platform with post scheduling, content generation, media uploads, analytics dashboard, and multi-platform account management.",
+    live: "https://social-schedular-frontend.onrender.com",
+    github: "https://github.com/MohanKrishna80/social-schedular",
+  },
   {
     title: "AI Resume Builder",
     desc: "SaaS-style resume builder with templates, PDF export, and AI-powered content suggestions.",
     live: "https://resume-builder-frontend-nye5.onrender.com",
     github: "https://github.com/MohanKrishna80/Resume-Builder",
   },
-   {
+  {
     title: "Food Delivery Platform",
     desc: "Full-stack MERN food delivery app with Stripe payments, admin dashboard, and order tracking system.",
     live: "https://food-delivery-app-frontend-3a54.onrender.com",
